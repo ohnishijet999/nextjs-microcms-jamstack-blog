@@ -21,7 +21,7 @@ export default function Home({blog}) {
   return (
     <div className={styles.container}>
       {blog.map((blog) => (
-        <li key={blog.id}>
+        <li key={blog.id} className={styles.list}>
           <Link href={`blog/${blog.id}`}>
             {blog.title}
           </Link>

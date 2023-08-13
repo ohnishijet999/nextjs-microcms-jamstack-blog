@@ -1,5 +1,8 @@
 import { client } from "@/libs/client";
 import styles from "../../styles/Home.module.scss"
+import cheerio from 'cheerio';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/hybrid.css';
 
 // SSG
 export const getStaticProps = async (context) => {
@@ -9,9 +12,17 @@ export const getStaticProps = async (context) => {
     contentId: id
   })
 
+  // コードハイライトを実装
+  const $ = cheerio.load(data.body);
+  $('pre code').each((_, elm) => {
+    const result = hljs.highlightAuto($(elm).text());
+    $(elm).html(result.value);
+    $(elm).addClass('hljs');
+  });
+
   return {
     props: {
-      blog: data,
+      blog: {...data, body: $.html()},
     }
   }
 }

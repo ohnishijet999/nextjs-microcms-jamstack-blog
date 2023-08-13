@@ -1,6 +1,7 @@
 .main {
-  width: 960px;
+  max-width: 960px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 .title {
@@ -37,4 +38,9 @@
     list-style-type: decimal;
     list-style-position: inside;
   }
+}
+
+.list {
+  list-style: none;
+
 }
