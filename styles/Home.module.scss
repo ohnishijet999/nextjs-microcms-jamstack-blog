@@ -38,9 +38,17 @@
     list-style-type: decimal;
     list-style-position: inside;
   }
+
+  & img {
+    width: 100%;
+  }
 }
 
 .list {
-  list-style: none;
+  // list-style: none;
+  margin-top: 20px;
+}
 
+.container {
+  padding: 20px;
 }
