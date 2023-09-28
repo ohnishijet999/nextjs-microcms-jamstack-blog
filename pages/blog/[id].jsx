@@ -41,9 +41,10 @@ export const getStaticPaths = async () => {
 
 export default function BlogId({blog}) {
   return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>{blog.title}</h1>
-      <p className={styles.publishedAt}>{blog.publishedAt}</p>
+    <main className="max-w-screen-lg my-0 mx-auto p-8">
+      <h1 className="mb-5 text-3xl font-black">{blog.title}</h1>
+      <p className="">公開日時：{new Date(blog.publishedAt).toLocaleString()}</p>
+      <p className="mb-10">更新日時：{new Date(blog.updatedAt).toLocaleString()}</p>
       <div
         dangerouslySetInnerHTML={{__html: `${blog.body}`}}
         className={styles.post}>
