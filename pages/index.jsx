@@ -32,7 +32,7 @@ export default function Home({blog}) {
                 <Image src={blog.thumbnail.url} alt='blog image' width="300" height="300" className='h-max object-cover rounded-t-lg'/>
               )}
               <p className='text-xs px-2 pt-1'>公開日時：{new Date(blog.publishedAt).toLocaleString()}</p>
-              <h2 className='px-3 pb-3 mt-1'>{blog.title}</h2>
+              <h2 className='px-3 pb-3 mt-1 font-bold'>{blog.title}</h2>
             </Link>
           </li>
         ))}
